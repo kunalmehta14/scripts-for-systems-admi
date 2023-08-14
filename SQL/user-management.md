@@ -7,6 +7,14 @@ CREATE USER '<username>'@'<hostname/ip>' IDENTIFIED WITH mysql_native_password B
 ````
 CREATE USER '<username>'@'%' IDENTIFIED WITH mysql_native_password BY '<userpassword>';
 ````
+### View existing users
+````
+SELECT user FROM mysql. user
+````
+### Show permissions of an existing user
+````
+SHOW GRANTS FOR '<user>'@'<host>';
+````
 ### Granting Permissions
 > To specific database and table
 ````
@@ -25,6 +33,11 @@ GRANT PRIVILEGE ON *.* TO 'username'@'host';
 GRANT PRIVILEGE ON *.* TO 'username'@'host';
 ````
 > To allow specific permission select from the following options:
+>
+> Use the following syntax:
+````
+GRANT <option> ON *.* TO 'username'@'host';
+````
 - ALL [PRIVILEGES]	Grant all privileges at specified access level except GRANT OPTION and PROXY.
 - ALTER	Enable use of ALTER TABLE. Levels: Global, database, table.
 - ALTER ROUTINE	Enable stored routines to be altered or dropped. Levels: Global, database, routine.
