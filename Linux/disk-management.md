@@ -23,3 +23,7 @@ df -T -h /data/
 ````
 df -a
 ````
+### Disk Utilization Per File/Folder in Gb
+````
+du -h /<parent>/child | grep '^\s*[0-9\.]\+G'
+````
