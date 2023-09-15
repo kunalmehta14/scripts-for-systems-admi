@@ -23,7 +23,11 @@ df -T -h /data/
 ````
 df -a
 ````
-### Disk Utilization Per File/Folder in Gb
+### Disk Utilization of each child File/Folder in Gb inside a folder
 ````
 du -h /<parent>/<child> | grep '^\s*[0-9\.]\+G'
+````
+### Disk Utilization of specific folder (summarized)
+````
+du -h -s /<parent>/<child>
 ````
