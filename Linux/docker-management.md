@@ -17,3 +17,8 @@ sudo usermod -aG docker $USER
 sudo chown root:docker /var/run/docker.sock
 sudo chown -R root:docker /var/run/docker
 ````
+## Resolving Permission Error:
+> Error: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied
+````
+sudo chmod 666 /var/run/docker.sock
+````
