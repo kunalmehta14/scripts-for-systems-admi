@@ -38,3 +38,22 @@ IGNORE 1 ROWS;
 ALTER TABLE <table_name> ADD CONSTRAINT 
 <PK_constraint_name> PRIMARY KEY (<col1_name, col2_name,...>)
 ````
+### Copying data from one table to another (empty) table
+````
+INSERT INTO <destination_table> (<col1>, <col2>, <col3>...)
+SELECT <col1>, <col2>, <col3>... FROM <source_table>;
+````
+### Copying data from one table to another table which already has values in it
+````
+UPDATE <destination_table> 
+    SET <dest_col_name> = (
+        SELECT <source_col_name>
+        FROM <source_table>
+        WHERE <source_table>.<id> = <destination_table>.<id>
+    );
+````
+### Copying data from one column to another in the same table
+````
+UPDATE <table_name> SET <dest_col> = <source_col>;
+````
+
