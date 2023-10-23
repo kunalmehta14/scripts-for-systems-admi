@@ -56,4 +56,7 @@ UPDATE <destination_table>
 ````
 UPDATE <table_name> SET <dest_col> = <source_col>;
 ````
-
+### Get Duplicate enteries in a table
+````
+SELECT <col1>, <col2>... FROM <database_name>.<table_name> GROUP BY <col1>, <col2>...  HAVING COUNT(*) > 1
+````
