@@ -60,3 +60,23 @@ UPDATE <table_name> SET <dest_col> = <source_col>;
 ````
 SELECT <col1>, <col2>... FROM <database_name>.<table_name> GROUP BY <col1>, <col2>...  HAVING COUNT(*) > 1
 ````
+### Find Enteries in a SQL Table that do not have a valid FOREIGN KEY
+````
+SELECT <table_b>.*
+FROM <table_b>
+LEFT JOIN <table_a> ON <table_b>.<foreign_key_column | For Example: Id> = <table_a>.<foreign_key_column | For Example: Id>
+WHERE <table_b>.<foreign_key_column | For Example: Id> IS NULL
+````
+### Delete Enteries in a SQL Table that do not have a valid FOREIGN KEY
+````
+DELETE FROM <table_b>
+WHERE Id IN (
+    SELECT <table_b>.<table_b_id>
+    FROM (
+        SELECT <table_b>.<table_b_id>
+        FROM <table_b>
+        LEFT JOIN <table_a> ON <table_b>.<foreign_key_column | For Example: Id> = <table_a>.<foreign_key_column | For Example: Id>
+        WHERE <table_b>.<foreign_key_column | For Example: Id> IS NULL
+    ) AS subquery
+);
+````
