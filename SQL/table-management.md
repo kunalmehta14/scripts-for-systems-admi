@@ -80,3 +80,9 @@ WHERE Id IN (
     ) AS subquery
 );
 ````
+### Finding Missing Rows When Comparing Two Tables
+> Note: The ID column in the comparison can be replaced with something else that can be used for comparison
+````
+SELECT * FROM <table_a> WHERE NOT EXISTS 
+(SELECT * FROM <table_b> WHERE <table_b>.ID = <table_a>.ID)
+````
