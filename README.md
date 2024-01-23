@@ -11,6 +11,7 @@
 + [MS SQL SERVER - Resource Management](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/SQL/msssql-resource-management.md#mssql-server-resource-management)
 + [SQL - MANAGING TABLES](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/SQL/table-management.md)
 + [SQL - USER MANAGEMENT](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/SQL/user-management.md)
++ [SQL - MySQL MANAGEMENT](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/SQL/mysql-host-management.md)
 
 ### AZURE
 + [MIGRATING VMWARE vSPHERE VM TO AZURE USING POWERSHELL](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/Azure/vspheretoazure-vm.ps1)
