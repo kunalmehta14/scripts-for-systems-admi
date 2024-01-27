@@ -15,3 +15,7 @@
 
 ### AZURE
 + [MIGRATING VMWARE vSPHERE VM TO AZURE USING POWERSHELL](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/Azure/vspheretoazure-vm.ps1)
++ [AZURE CLI - AZURE RESOURCE MANAGEMENT](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/Azure/azure-resource-management.md)
+
+### WINDOWS
++ [WINDOWS SERVER - ACTIVE DIRECTORY USER MANAGEMENT](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/Azure/windows-activedirectory-management.md)
