@@ -12,6 +12,7 @@
 + [SQL - MANAGING TABLES](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/SQL/table-management.md)
 + [SQL - USER MANAGEMENT](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/SQL/user-management.md)
 + [MySQL - APPLICATION MANAGEMENT](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/SQL/mysql-host-management.md)
++ [MySQL - REPLICATION CONFIGURATION](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/SQL/mysql-replicationconfiguration.md)
 
 ### AZURE
 + [MIGRATING VMWARE vSPHERE VM TO AZURE USING POWERSHELL](https://github.com/kunalmehta14/scripts-for-systems-admin/blob/master/Azure/vspheretoazure-vm.ps1)
