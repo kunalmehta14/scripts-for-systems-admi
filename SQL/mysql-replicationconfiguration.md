@@ -55,7 +55,7 @@ START SLAVE;
 + To check Master/Slave process status
 ````
 # Master Status, to be ran on the primary instance
-SHOW MASTER\G;
+SHOW MASTER STATUS\G;
 # Slave Status, to be ran on the secondary instance
-SHOW SLAVE\G;
+SHOW SLAVE STATUS\G;
 ````
