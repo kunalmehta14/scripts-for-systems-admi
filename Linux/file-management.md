@@ -23,3 +23,11 @@ alias gsudo='sudo git -c "include.path='"${XDG_CONFIG_DIR:-$HOME/.config}/git/co
 ````
 gsudo config --list --show-origin --includes | less
 ````
+> Check number of files in a directory
+````
+ls | wc -l
+````
+> Check number of files in a directory including the files in the subdirector(y|ies)
+````
+find  -maxdepth <number-of-sub-directory-level-to-search> | wc -l
+````
