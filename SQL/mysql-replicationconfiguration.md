@@ -59,3 +59,48 @@ SHOW MASTER STATUS\G;
 # Slave Status, to be ran on the secondary instance
 SHOW SLAVE STATUS\G;
 ````
+## MySQL Replication Troubleshooting
+
+### "Equal MySQL server ids" Error
+> Error Code: " Fatal error: The replica I/O thread stops because source and replica have equal MySQL server ids; these ids must be different for replication to work (or the --replicate-same-server-id option must be used on replica but this does not always make sense; please check the manual before using it)."
+1. Check the server_ids used by both the servers:
+    + Check if the primary and secondary are using different server_ids:
+      ````
+      # For Example:
+      # Primary:
+      SHOW VARIABLES LIKE 'server_id';
+      +---------------+-------+
+      | Variable_name | Value |
+      +---------------+-------+
+      | server_id     | 1     |
+      +---------------+-------+
+      # Secondary:
+      SHOW VARIABLES LIKE 'server_id';
+      +---------------+-------+
+      | Variable_name | Value |
+      +---------------+-------+
+      | server_id     | 2     |
+      +---------------+-------+
+      ````
+    + If the the ids are the same, update the id on my.cnf, the configuration file for mysql. If the ids aren't same, use the next step to troubleshoot the issue.
+2. Manually update the position of the secondary server:
+    + View the current master status to get the binlog file and position number:
+      ````
+      SHOW MASTER STATUS\G;
+      
+      # Result:
+      +-----------+----------+--------------+------------------+-------------------+
+      | File      | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
+      +-----------+----------+--------------+------------------+-------------------+
+      | ON.000001 |      157 |              |                  |                   |
+      +-----------+----------+--------------+------------------+-------------------+
+      ````
+    + Manually update the position of the secondary server to force start the replication:
+      ````
+      CHANGE MASTER TO
+      MASTER_HOST='<PRIMARY-SERVER-IP-ADDRESS>', 
+      MASTER_USER='<REPLICATION-USER-NAME>', 
+      MASTER_PASSWORD='<REPLICATION-USER-PASSWORD>', 
+      MASTER_LOG_FILE='ON.000001', 
+      MASTER_LOG_POS=157;
+      ````
