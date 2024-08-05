@@ -104,3 +104,10 @@ SHOW SLAVE STATUS\G;
       MASTER_LOG_FILE='ON.000001', 
       MASTER_LOG_POS=157;
       ````
+###  Replica failed to initialize applier metadata structure from the repository
+> Run the following commands to force reset replication:
+````
+STOP REPLICA;
+RESET REPLICA;
+START REPLICA;
+````
